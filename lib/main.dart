@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import 'app/models/views/market_expenses_page.dart';
 import 'firebase_options.dart';
-import 'market_expenses/views/market_expenses_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Despesas do Mercado',
       theme: ThemeData(
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      home: const MarketExpensesPage(),
+      home: MarketExpensesPage(),
     );
   }
 }
